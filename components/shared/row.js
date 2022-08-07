@@ -16,7 +16,7 @@ const Row = ({ title, movielist }) => {
     const GetPopularList = () => {
         return movielist.results.map((movie) => {
             return (
-                <Cards movie={movie} />
+                <Cards key={movie.title} movie={movie} />
             )
         })
     }
