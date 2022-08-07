@@ -1,11 +1,6 @@
 import Image from 'next/image';
-
-const BACKDROP_LINK = "https://image.tmdb.org/t/p/original/";
-
-
+import constants from '../utils/constants';
 const Banner = ({ movie }) => {
-
-    console.log("banner", movie);
 
     const truncate = (text,limit) => {
         if (text?.length > limit) {
@@ -14,8 +9,7 @@ const Banner = ({ movie }) => {
             return text;
         }
     }
-
-
+    
     return (
         <div className='w-full h-[550px] text-white'>
             <div className='relative h-[550px] min-w-[180px]'>
@@ -23,7 +17,7 @@ const Banner = ({ movie }) => {
                 <Image
                     className='w-full max-w-full h-auto'
                     layout="fill"
-                    src={`${BACKDROP_LINK + movie.backdrop_path}`}
+                    src={`${constants.BACKDROP_LINK + movie.backdrop_path}`}
                     alt={`${movie.title + "banner"}`}
                     // objectFit="cover"
                 />

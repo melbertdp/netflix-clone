@@ -3,15 +3,9 @@ import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/outline'
 
 import Cards from './cards';
 
-
-
 const Row = ({ title, movielist }) => {
-
     const rowRef = useRef(null);
     const [isMoved, setIsMoved] = useState(false);
-    // console.log("movielist", movielist);
-
-
 
     const GetPopularList = () => {
         return movielist.results.map((movie) => {
@@ -26,16 +20,8 @@ const Row = ({ title, movielist }) => {
         setIsMoved(true);
 
         if (rowRef.current) {
-
-            console.log("here");
             const { scrollLeft, clientWidth } = rowRef.current;
-
-            console.log("scrollLeft", scrollLeft)
-            console.log("clientWidth", clientWidth)
-
             const scrollTo = direction === "left" ? scrollLeft - clientWidth : scrollLeft + clientWidth
-
-
             rowRef.current.scrollTo({ left: scrollTo, behavior: "smooth" });
         }
 

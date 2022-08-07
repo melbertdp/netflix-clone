@@ -23,7 +23,7 @@ function Blog({ movies }) {
             <Header />
             <Banner movie={banner} />
             <section className="md:space-y-4">
-                <div>
+                <div className='mt-10'>
                     <Row key={"popular"} title="popular" movielist={movies.popular} />
                     <Row key={"trending"} title="trending" movielist={movies.trending} />
                 </div>

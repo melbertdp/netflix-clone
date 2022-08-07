@@ -2,8 +2,8 @@ import { useState, useEffect } from 'react'
 import Image from 'next/image';
 import Link from 'next/link';
 import { BellIcon, SearchIcon } from '@heroicons/react/solid'
+import constants from '../utils/constants';
 
-const NETFLIX_ICON = 'https://rb.gy/ulxxee';
 
 const Header = () => {
 
@@ -29,7 +29,7 @@ const Header = () => {
         <header className={`${isScrolled && 'bg-[#141414]'}`}>
             <div className="flex items-center space-x-2 md:space-x-10">
                 <Image
-                    src="https://rb.gy/ulxxee"
+                    src={`${constants.NETFLIX_LOGO}`}
                     alt="logo"
                     className=" ml-4 cursor-pointer rounded"
                     width={130}
@@ -52,7 +52,7 @@ const Header = () => {
                 <BellIcon className="h-6 w-6" />
                 <Link href="/account" className='pl-4'>
                     <Image
-                        src="https://rb.gy/g1pwyx"
+                        src={`${constants.ACCOUNT_ICON}`}
                         alt="profile"
                         className=" ml-4 cursor-pointer rounded"
                         width={30}
