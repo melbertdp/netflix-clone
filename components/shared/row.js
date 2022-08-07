@@ -10,21 +10,18 @@ const Row = ({ title, movielist }) => {
     const GetPopularList = () => {
         return movielist.results.map((movie) => {
             return (
-                <Cards key={movie.title} movie={movie} />
+                <Cards key={"title" + movie.title} movie={movie} />
             )
         })
     }
 
     const handleClick = (direction) => {
-
         setIsMoved(true);
-
         if (rowRef.current) {
             const { scrollLeft, clientWidth } = rowRef.current;
             const scrollTo = direction === "left" ? scrollLeft - clientWidth : scrollLeft + clientWidth
             rowRef.current.scrollTo({ left: scrollTo, behavior: "smooth" });
         }
-
     }
 
 
