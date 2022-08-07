@@ -20,14 +20,11 @@ const Banner = ({ movie }) => {
         <div className='w-full h-[550px] text-white'>
             <div className='relative h-[550px] min-w-[180px]'>
                 <div className='z-10 absolute w-full h-[550px] bg-gradient-to-r from-black'></div>
-                {/* <img
-                    className='w-full h-full object-cover'
-                    src={`${BACKDROP_LINK + movie.backdrop_path}`}
-                /> */}
                 <Image
                     className='w-full max-w-full h-auto'
                     layout="fill"
                     src={`${BACKDROP_LINK + movie.backdrop_path}`}
+                    alt={`${movie.title + "banner"}`}
                     // objectFit="cover"
                 />
 

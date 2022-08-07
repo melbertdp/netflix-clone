@@ -1,6 +1,9 @@
 import { useState, useEffect } from 'react'
-import Link from 'next/link'
+import Image from 'next/image';
+import Link from 'next/link';
 import { BellIcon, SearchIcon } from '@heroicons/react/solid'
+
+const NETFLIX_ICON = 'https://rb.gy/ulxxee';
 
 const Header = () => {
 
@@ -25,14 +28,13 @@ const Header = () => {
     return (
         <header className={`${isScrolled && 'bg-[#141414]'}`}>
             <div className="flex items-center space-x-2 md:space-x-10">
-                <img
+                <Image
                     src="https://rb.gy/ulxxee"
-                    width={100}
-                    height={100}
-                    className="cursor-pointer object-contain"
+                    alt="logo"
+                    className=" ml-4 cursor-pointer rounded"
+                    width={130}
+                    height={30}
                 />
-
-                {/* <BasicMenu /> */}
 
                 <ul className="hidden space-x-4 md:flex">
                     <li className="headerLink cursor-default font-semibold text-white hover:text-white">
@@ -44,18 +46,20 @@ const Header = () => {
                     <li className="headerLink">My List</li>
                 </ul>
             </div>
-            {/* <div className="flex items-center space-x-4 text-sm font-light">
+            <div className="flex items-center space-x-4 text-sm font-light">
                 <SearchIcon className="sm hidden h-6 w-6 sm:inline" />
                 <p className="hidden lg:inline">Kids</p>
                 <BellIcon className="h-6 w-6" />
-                <Link href="/account">
-                    <img
+                <Link href="/account" className='pl-4'>
+                    <Image
                         src="https://rb.gy/g1pwyx"
-                        alt=""
-                        className="cursor-pointer rounded"
+                        alt="profile"
+                        className=" ml-4 cursor-pointer rounded"
+                        width={30}
+                        height={30}
                     />
                 </Link>
-            </div> */}
+            </div>
         </header>
     );
 }
